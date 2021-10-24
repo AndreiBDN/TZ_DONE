@@ -5,8 +5,12 @@ import { Layout } from '../../complexes/Layout';
 import { Table } from '../../simple/Table';
 import Header from './Header';
 
-
+/**
+ * 
+ * @returns страница
+ */
 const HandlePage: FC = () => {
+    // добавленые хэнделы
     const state = useAppSelector(selectHandles)
 
     return (

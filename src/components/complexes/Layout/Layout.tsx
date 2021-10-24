@@ -5,6 +5,12 @@ type Props = {
     children: any
 }
 
+/**
+ * 
+ * @param children 
+ * @returns компонент обертки страницы
+ */
+
 const Layout:FC<Props> = ({children}) => {
     return (
         <div className={styles.wrapper}>{children}</div>

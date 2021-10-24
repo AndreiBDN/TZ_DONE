@@ -1,4 +1,4 @@
-import React, { FC} from 'react'
+import React, { FC } from 'react'
 import styles from './TextInput.module.scss'
 
 type Props = {
@@ -12,12 +12,17 @@ type Props = {
  * 
  * @param value - входящее значение
  * @param onChange - колбэк при вводе текста
- * @param placeholder 
- * @param label 
+ * @param placeholder - плэйс холдер
+ * @param label - лэйбел если вдруг понадобиться
  * @returns - компонент инпута
  */
 
-const TextInput: FC<Props> = ({ value, onChange, placeholder, label }) => {
+const TextInput: FC<Props> = ({
+    value,
+    onChange,
+    placeholder,
+    label
+}) => {
 
     return (
         <div className={styles.root}>

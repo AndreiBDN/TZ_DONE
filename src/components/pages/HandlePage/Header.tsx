@@ -5,7 +5,10 @@ import { Button } from '../../simple/Button'
 import { TextInput } from '../../simple/TextInput'
 import styles from './HandlePage.module.scss'
 
-
+/**
+ * 
+ * @returns компонент добавление хэндела
+ */
 const Header: FC = () => {
 
     const dispatch = useAppDispatch()
@@ -13,6 +16,7 @@ const Header: FC = () => {
     const [handle, setHandle] = useState<string>('')
     const [count, setCount] = useState<number>(0)
 
+    // функция добавления хэндела
     const onHandleAdd = () => {
         if (handle && count) {
             dispatch(getHandles({
@@ -23,7 +27,6 @@ const Header: FC = () => {
         }
 
     }
-
 
     return (
         <div className={styles.header}>

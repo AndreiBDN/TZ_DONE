@@ -19,25 +19,33 @@ type Props = {
  * @returns - JSX element Button
  */
 
-const Button: FC<Props> = ({ label, color, onClick, labelColor, disabled = false }) => {
+const Button: FC<Props> = ({
+    label,
+    color,
+    onClick,
+    labelColor,
+    disabled = false
+}) => {
 
+    // Изменение цвета кнопки в зависимости от статуса
     const btnColor = useMemo(() => {
-        if(!disabled && color) {
+        if (!disabled && color) {
             return color
         }
-        if(disabled) {
+        if (disabled) {
             return '#c2c2c2'
         }
         return 'green'
-    },[disabled, color])
+    }, [disabled, color])
+
     return (
         <button
-        disabled={disabled}
+            disabled={disabled}
             className={styles.button}
-            style={{ 
+            style={{
                 backgroundColor: btnColor,
                 color: labelColor || '#fff'
-         }}
+            }}
             onClick={onClick}
         >{label}</button>
     )

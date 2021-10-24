@@ -7,7 +7,13 @@ type Props = {
     data: Array<Array<HandleType>>
 }
 
-const Table: FC<Props> = ({ data }) => {
+const Table: FC<Props> = ({
+    data
+}) => {
+
+    /**
+     *  Подготовка данных для шапки таблицы
+     */
     const contexts = useMemo(() => {
         let c: any = {}
         data.map((h: Array<HandleType>) => {
@@ -23,6 +29,10 @@ const Table: FC<Props> = ({ data }) => {
 
         return c
     }, [data])
+
+    /**
+     * Подготовка данных для вывода в таблице
+     */
     const handleData = useMemo(() => {
         const prepare = data.map((h: Array<HandleType>) => {
             let c: any = { handle: h[0].author.members[0].handle }
@@ -38,19 +48,13 @@ const Table: FC<Props> = ({ data }) => {
                 if (h[i].verdict === VerdictType.OK) {
                     c[h[i].contestId][h[i].problem.index].verdict = h[i].verdict
                 }
-
             }
-
             return c
-
         })
-
         return prepare
     }, [data])
 
-    console.log(handleData);
-    
-
+    // Вывод таблицы
     return (
         <table className={styles.table}>
             <thead>
