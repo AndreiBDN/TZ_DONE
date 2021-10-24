@@ -2,7 +2,8 @@ import React, { FC } from 'react'
 import { useAppSelector } from '../../../hooks/useStore';
 import { selectHandles } from '../../../store/slices/app';
 import { Layout } from '../../complexes/Layout';
-import { Table } from '../../simple/Table';
+import { Table } from '../../complexes/Table';
+
 import Header from './Header';
 
 /**

@@ -17,7 +17,6 @@ const Table: FC<Props> = ({
     const contexts = useMemo(() => {
         let c: any = {}
         data.map((h: Array<HandleType>) => {
-            // let c: any = {handle: h[0].author.members[0].handle}
             for (let i: any = 0; i < h.length; i++) {
                 c[h[i].contestId] = {}
             }
